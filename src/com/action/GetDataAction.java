@@ -29,7 +29,7 @@ public class GetDataAction {
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, SQLException {
 		//发送 GET 请求
         String s=HttpRequest.sendGet("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=60d9430f7a6d5fc7&service_area=SA81&count=5"," ");
-        
+        System.out.println(s);
         ArrayList<Shop> shoplist = new ArrayList<Shop>();
         
         Document doc = null;

@@ -10,17 +10,19 @@ import com.unitil.HttpRequest;
 public class GooglePlaceAction {
 	public static void main(String[] args){
 		//发送 GET 请求
-        String s=HttpRequest.sendGet("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=34.077721,134.560615&radius=200&sensor=true&key=AIzaSyAe8XE3B_f6i2Wf8vyg1VVBKumsk5XfBgQ"," ");
-        
+        String s=HttpRequest.sendGet("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=34.077721,134.560615&radius=100&sensor=true&key=AIzaSyAe8XE3B_f6i2Wf8vyg1VVBKumsk5XfBgQ"," ");
+        System.out.println(s);
+        System.out.println(s.substring(3750, 3790));
         Gson gson = new Gson();
         
         GooglePlacesModel gpm = gson.fromJson(s, GooglePlacesModel.class);
         
         System.out.println(gpm.getStatus());
-        
-        for(int i = 0;i<gpm.getResults().size();i++){
-        	System.out.println(gpm.getResults().get(i).getName() + "  " + gpm.getResults().get(i).getIcon());
-        }
+//        System.out.println(gpm.getStatus());
+//        
+//        for(int i = 0;i<gpm.getResults().size();i++){
+//        	System.out.println(gpm.getResults().get(i).getName() + "  " + gpm.getResults().get(i).getIcon());
+//        }
         
 //        Document doc = null;
 //		try {

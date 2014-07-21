@@ -18,7 +18,7 @@ public class Results {
 	private String name;
 
 	@SerializedName("photos")
-	private Photos photos;
+	private List<Photos> photos;
 
 	@SerializedName("rating")
 	private Double rating;
@@ -54,14 +54,6 @@ public class Results {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Photos getPhotos() {
-		return photos;
-	}
-
-	public void setPhotos(Photos photos) {
-		this.photos = photos;
 	}
 
 	public Double getRating() {
@@ -102,5 +94,9 @@ public class Results {
 
 	public void setGeometry(Geometry geometry) {
 		this.geometry = geometry;
+	}
+
+	public void setPhotos(List<Photos> photos) {
+		this.photos = photos;
 	}
 }
